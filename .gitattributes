@@ -1,0 +1,3 @@
+# Keep GitHub language stats focused on the Python/Django application.
+server/frontend/** linguist-vendored
+server/database/** linguist-vendored
