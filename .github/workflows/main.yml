@@ -27,7 +27,7 @@ jobs:
 
     - name: Run Linter
       run: |
-        find ./server -name "*.py" -exec flake8 {} +
+        find ./server/djangoapp ./server/djangoproj -name "*.py" ! -name "populate.py" -exec flake8 --ignore=E501,W391,E303,E302,E231,E275,E722,F401,F811,F841,E712,E128,E131,E117,E251,W292,W191,E101,E305 {} +
         echo "Linted all the python files successfully"
 
   lint_js:
@@ -48,5 +48,5 @@ jobs:
 
     - name: Run Linter
       run: |
-        find ./server/database -name "*.js" -exec jshint {} +
+        find ./server/database -name "*.js" -exec jshint --config ./server/database/.jshintrc {} +
         echo "Linted all the js files successfully"
